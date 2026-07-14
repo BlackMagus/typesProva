@@ -16,7 +16,8 @@ async function main() {
         console.log("\n--- Creazione di un Utente ---");
         const nuovoUtente = userRepository.create({
             name: "Alice Rossi",
-            email: "alice@example.com"
+            email: "alice@example.com",
+            password: "password123",
         });
         const utenteSalvato = await userRepository.save(nuovoUtente);
         console.log("Utente salvato:", utenteSalvato);

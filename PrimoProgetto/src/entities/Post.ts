@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable, DeleteDateColumn } from "typeorm";
 import { User } from "./User.ts";
+import { Tag } from "./Tag.ts";
 
 @Entity("posts")
 export class Post {
@@ -12,7 +13,13 @@ export class Post {
     @Column({ type: "text" })
     content!: string;
 
-    // Relazione molti a uno: molti post appartengono a un utente
     @ManyToOne(() => User, (user) => user.posts, { onDelete: "CASCADE" })
     user!: User;
+    
+    @DeleteDateColumn()
+    deletedAt!: Date;
+        
+    @ManyToMany(() => Tag, (tag) => tag.posts, { cascade: true })
+    @JoinTable()
+    tags!: Tag[];
 }

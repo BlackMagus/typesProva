@@ -4,31 +4,34 @@
    "description": "Awesome project developed with TypeORM.",
    "type": "module",
    "devDependencies": {
+      "@types/bcrypt": "^6.0.0",
       "@types/node": "^20.19.43",
       "@types/pg": "^8.20.0",
       "tsx": "^4.22.4",
       "typescript": "^5.9.3"
    },
    "dependencies": {
+      "bcrypt": "^6.0.0",
       "dotenv": "^17.4.2",
       "pg": "^8.22.0",
       "reflect-metadata": "^0.2.2",
       "typeorm": "1.0.0"
    },
    "scripts": {
-    "start": "npx tsx src/index.ts",
-    "typeorm": "tsx -r dotenv/config ./node_modules/typeorm/cli.js",
-    "migration:gen": "npm run typeorm -- migration:generate -d src/data-source.ts",
-    "migration:run": "npm run typeorm -- migration:run -d src/data-source.ts",
-    "migration:revert": "npm run typeorm -- migration:revert -d src/data-source.ts",
-    "migration:create": "npm run typeorm -- migration:create"
+      "start": "npx tsx src/index.ts",
+      "typeorm": "tsx -r dotenv/config ./node_modules/typeorm/cli.js",
+      "migration:gen": "npm run typeorm -- migration:generate -d src/data-source.ts",
+      "migration:run": "npm run typeorm -- migration:run -d src/data-source.ts",
+      "migration:revert": "npm run typeorm -- migration:revert -d src/data-source.ts",
+      "migration:create": "npm run typeorm -- migration:create"
    },
-   
    "allowScripts": {
       "tsx@4.22.4": true,
       "pg@8.22.0": true,
       "@types/pg@8.20.0": true,
       "dotenv@17.4.2": true,
-      "@types/node@20.19.43": true
+      "@types/node@20.19.43": true,
+      "bcrypt@6.0.0": true,
+      "@types/bcrypt@6.0.0": true
    }
 }
