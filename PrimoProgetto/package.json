@@ -13,9 +13,11 @@
    "dependencies": {
       "bcrypt": "^6.0.0",
       "dotenv": "^17.4.2",
+      "express": "^5.2.1",
+      "jsonwebtoken": "^9.0.3",
       "pg": "^8.22.0",
       "reflect-metadata": "^0.2.2",
-      "typeorm": "1.0.0"
+      "typeorm": "^1.0.0"
    },
    "scripts": {
       "start": "npx tsx src/index.ts",
@@ -32,6 +34,7 @@
       "dotenv@17.4.2": true,
       "@types/node@20.19.43": true,
       "bcrypt@6.0.0": true,
-      "@types/bcrypt@6.0.0": true
+      "@types/bcrypt@6.0.0": true,
+      "esbuild@0.28.1": true
    }
 }
